@@ -1,0 +1,117 @@
+
+* {
+    font-family: 'Ubuntu';
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    background-color: rgb(29, 29, 29);
+    color: rgb(209, 209, 209);
+    border: 3px solid white;
+    border-radius: 7px;
+    height: 100%;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#container {
+    display: flex;
+    max-width: 900px;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 640px;
+    border-radius: 20px;
+}
+
+/*
+* FORMULARIO 1
+*/
+.form {
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 10px;
+    max-width: 220px;
+    min-width: 220px;
+    display: inline-block;
+    flex-direction: column;
+}
+
+#tamanhoNumero {
+    border-radius: 20px;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+    border-style: none;
+}
+
+.form div {
+    margin: 5px 0;
+}
+
+#form1 {
+    margin-bottom: 20px;
+}
+
+#btnGerar button{
+    width: 100%;
+    color: rgb(29, 29, 29);
+    border: 3px solid white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: center;
+    background: white;
+    padding: 5px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    fo
+}
+
+#btnGerar button:hover,
+.title button:hover {
+    background-color: rgb(29, 29, 29);
+    color: white;
+}
+
+/*
+* FORMULARIO 2
+*/
+.title {
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    color: black;
+}
+
+#div1 {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+#div1 input {
+    min-width: 206px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    border-style: none;
+    text-align: center;
+}
+
+.title button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    border-style: none;
+    cursor: pointer;
+    border: 2px solid white;
+    background-color: #d3d3d3;
+}
