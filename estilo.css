@@ -78,6 +78,7 @@ body {
     width: 100%;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    outline: 0;
     border: 3px solid white;
     text-align: center;
     padding: 5px 0;
