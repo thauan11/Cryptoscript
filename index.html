@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Gerador de senha</title>
+        <title>Gerador de Senha</title>
         <meta name="author" content="Victor Andrade">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
         <link rel="stylesheet" href="estilo.css">
-        <link rel="shortcut icon" href="ico.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
     </head>
 
     <body>
         <div id="container">
             <div id="box">
+            
+                <div id="pop_up">
+                    <button onclick="abrirPopUp()" id="btnPopUp" data-tooltip="Pop Up">
+                        <i class="fa-solid fa-share-from-square"></i>
+                    </button>
+                </div>
+
                 <div id="form0" style="height: 152px; overflow: hidden; transition: height 600ms;">
                     <div id="form1">
                         <div class="form">
@@ -36,19 +43,19 @@
                     <div id="form2" onblur="esconder()">
                         <div class="title">
                             <div id="div1">
-                                <input type="text" placeholder="Senha gerada" id="senhaGerada">
-                                <button onclick="copiar()">
-                                    <i class="fa-solid fa-clipboard"></i>
-                                </button>
+                                <div id="box3">
+                                    <input type="text" placeholder="Senha gerada" id="senhaGerada">
+                                </div>
+                                <div class="float_right">
+                                    <button onclick="copiar()">
+                                        <i class="fa-solid fa-clipboard"></i>
+                                    </button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                </div>
-            
-                <div id="pop_up">
-                    <button onclick="abrirPopUp()" id="btnPopUp" data-tooltip="Pop Up">
-                        <i class="fa-solid fa-share-from-square"></i>
-                    </button>
+
                 </div>
             </div>
         </div>

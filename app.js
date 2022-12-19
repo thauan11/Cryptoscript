@@ -1,5 +1,4 @@
 var pagina = window.location.pathname
-console.log(pagina)
 
 function gerarSenha(){
     var tamanhoSenha = document.getElementById('tamanhoNumero').value
@@ -150,7 +149,7 @@ function copiar() {
 
 //FUNÇÕES PARA O HTML POPUP
 function abrirPopUp() {
-    janela = window.open('popup.html','nova_janela','width=300,height=260')
+    janela = window.open('popup.html','nova_janela','width=350,height=270',titlebar=0,resizable=0)
 }
 
 function copiarPopUp() {
@@ -165,7 +164,7 @@ function copiarPopUp() {
         timer: 1000,
         timerProgressBar: true,
         showConfirmButton: false,
-        heightAuto: false,
+        heightAuto: true,
     })
 }
 
