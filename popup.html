@@ -11,8 +11,8 @@
         <link rel="shortcut icon" href="ico.ico" type="image/x-icon">
     </head>
 
-    <body>
-        <div id="container">
+    <body onload="mostrarSenha()">
+        <div id="container_popup">
             <div id="box">
                 <div id="form0" style="height: 152px; overflow: hidden; transition: height 600ms;">
                     <div id="form1">
@@ -37,18 +37,12 @@
                         <div class="title">
                             <div id="div1">
                                 <input type="text" placeholder="Senha gerada" id="senhaGerada">
-                                <button onclick="copiar()">
+                                <button onclick="copiarPopUp()">
                                     <i class="fa-solid fa-clipboard"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
-                </div>
-            
-                <div id="pop_up">
-                    <button onclick="abrirPopUp()" id="btnPopUp" data-tooltip="Pop Up">
-                        <i class="fa-solid fa-share-from-square"></i>
-                    </button>
                 </div>
             </div>
         </div>

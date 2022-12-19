@@ -6,25 +6,31 @@
 }
 
 body {
-    display: flex;
     background-color: rgb(29, 29, 29);
-    color: rgb(209, 209, 209);
-    border: 3px solid white;
-    border-radius: 7px;
-    height: 100%;
-    font-size: 20px;
-    margin-top: 10px;
 }
 
 #container {
     display: flex;
+    color: rgb(209, 209, 209);
+    border: 3px solid white;
+    border-radius: 7px;
+    font-size: 20px;
+    margin-top: 10px;
     max-width: 900px;
+    min-width: 270px;
     justify-content: center;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
     height: 640px;
     border-radius: 20px;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#box {
+    float: left;
 }
 
 /*
@@ -50,6 +56,7 @@ body {
     text-align: center;
     margin-bottom: 5px;
     border-style: none;
+    outline: 0;
 }
 
 .form div {
@@ -70,14 +77,15 @@ body {
     background: white;
     padding: 5px 0;
     text-transform: uppercase;
-    cursor: pointer;
-    fo
 }
 
 #btnGerar button:hover,
-.title button:hover {
+.title button:hover,
+#btnPopUp:hover {
     background-color: rgb(29, 29, 29);
     color: white;
+    cursor: pointer;
+    border-color: white;
 }
 
 /*
@@ -104,6 +112,7 @@ body {
     border-top-left-radius: 20px;
     border-style: none;
     text-align: center;
+    outline: 0;
 }
 
 .title button {
@@ -113,5 +122,65 @@ body {
     border-style: none;
     cursor: pointer;
     border: 2px solid white;
-    background-color: #d3d3d3;
+}
+
+/*
+* POP UP
+*/
+
+#container_popup {
+    color: rgb(209, 209, 209);
+    font-size: 20px;
+    max-width: 250px;
+    height: 215px;
+    margin-top: 30px;
+    margin-left: 30px;
+
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#pop_up {
+    float: right;
+    margin-top: 30px;
+}
+
+#btnPopUp {
+    width: 42px;
+    height: 42px;
+    border-radius: 30px;
+    background-color: white;
+    border-color: rgb(29, 29, 29);
+    border-style: solid;
+}
+
+[data-tooltip] {
+    position: relative;
+}
+
+
+[data-tooltip]:after {
+    display: none;
+    position: absolute;
+    top: -29px;
+    left: -5px;
+    padding: 5px;
+    border-radius: 3px;
+    content: attr(data-tooltip);
+    white-space: nowrap;
+    background-color: white;
+    color: black;
+}
+  
+[data-tooltip]:hover:after {
+    display: block;
 }

@@ -1,19 +1,18 @@
+var pagina = window.location.pathname
+console.log(pagina)
+
 function gerarSenha(){
     var tamanhoSenha = document.getElementById('tamanhoNumero').value
 
     if (tamanhoSenha < 1 | tamanhoSenha > 16) {
-        Swal.fire({
-            title: 'Digite um valor entre 1 e 16',
-            icon: 'error',
-            iconColor: 'white',
-            color: 'white',
-            timer: 1500,
-            timerProgressBar: true,
-            showConfirmButton: false,
-            heightAuto: false,
-        })
+        if (pagina.includes('index.html')) {
+            alertaTamanho()
+        } else {
+            alertaTamanhoPopUp()
+        }
     } else {
-        document.getElementById('form0').style.height = '215px'
+        //MOSTRA A DIV DA SENHA
+        mostrarSenha()
 
         //CHECKBOX'S
         let checkBoxNum = document.getElementById('cbxNumero')
@@ -114,8 +113,25 @@ function gerarSenha(){
     }
 }
 
+// MOSTRA A SENHA
+function mostrarSenha() {
+    document.getElementById('form0').style.height = '215px'
+}
+
+function alertaTamanho(){
+    Swal.fire({
+        title: 'Digite um valor entre 1 e 16',
+        icon: 'error',
+        iconColor: 'white',
+        color: 'white',
+        timer: 1500,
+        timerProgressBar: true,
+        showConfirmButton: false,
+        heightAuto: false,
+    })
+}
+
 // BOTÃO COPIAR SENHA
-document.getElementById('senhaGerada').addEventListener('click', copiar);
 function copiar() {
     document.querySelector("#senhaGerada").select();
     document.execCommand("copy");
@@ -130,9 +146,42 @@ function copiar() {
         showConfirmButton: false,
         heightAuto: false,
     })
-    
-    document.getElementById('tamanhoNumero').onfocus
 }
 
+//FUNÇÕES PARA O HTML POPUP
+function abrirPopUp() {
+    janela = window.open('popup.html','nova_janela','width=300,height=260')
+}
 
+function copiarPopUp() {
+    document.querySelector("#senhaGerada").select();
+    document.execCommand("copy");
+
+    Swal.fire({
+        title: 'Senha copiada',
+        icon: 'success',
+        iconColor: 'white',
+        color: 'white',
+        timer: 1000,
+        timerProgressBar: true,
+        showConfirmButton: false,
+        heightAuto: false,
+    })
+}
+
+function alertaTamanhoPopUp(){
+    Swal.fire({
+        title: 'Digite um valor entre 1 e 16',
+        icon: 'error',
+        iconColor: 'white',
+        color: 'white',
+        timer: 1000,
+        timerProgressBar: true,
+        showConfirmButton: false,
+        heightAuto: false,
+        width: 300,
+        heightAuto: true,
+        padding: 0,
+    })
+}
 
