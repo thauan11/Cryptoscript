@@ -6,25 +6,22 @@
 
 body {
     font: 2em 'Ubuntu';
-    background-color: rgb(29, 29, 29);
+    background-color: #121212;
 }
 
 #container {
     display: flex;
-    color: rgb(209, 209, 209);
-    border: 3px solid white;
-    border-radius: 7px;
+    color: white;
     margin-top: 10px;
-    max-width: 900px;
     justify-content: center;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    height: 640px;
-    border-radius: 20px;
     flex-direction: column;
     overflow-x: hidden;
     overflow-y: hidden;
+    width: 800px;
+    height: 640px;
 }
 
 #box {
@@ -32,14 +29,19 @@ body {
     flex-direction: column;
 }
 
-/*
-* FORMULARIO 1
-*/
+#form0 {
+    height: 162px; 
+    overflow: hidden; 
+    transition: height 400ms;
+    position: absolute;
+    top: 25%;
+    left: 40%;
+}
 
 #form1 {
     margin-bottom: 20px;
 }
-.form {
+#form {
     padding: 10px;
     width: 220px;
     display: inline-block;
@@ -50,7 +52,7 @@ body {
     border-right: 3px solid white;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    margin-bottom: -10px;
+    margin-bottom: -13px;
 }
 
 #tamanhoNumero {
@@ -61,9 +63,66 @@ body {
     margin-bottom: 5px;
     border-style: none;
     outline: 0;
+    color: black;
+    font-weight: 700;
 }
 
-.form div {
+.checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox label:last-child {
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+#checkboxs .switch {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    position: relative;
+}
+
+#checkboxs .switch .switchBtn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #dc4f5a;
+}
+
+#checkboxs .switch input {
+    display: none;
+}
+
+#checkboxs .switch .switchBtn::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 2px;
+    bottom: 2px;
+    border-radius: 100%;
+    transition: all 200ms;
+    background-color: #121212;
+}
+
+#checkboxs .switch input:checked + .switchBtn {
+    background-color: #58A721;
+}
+
+#checkboxs .switch input:checked + .switchBtn::before{
+    transform: translateX(20px);
+}
+
+#form div {
     margin: 5px 0;
 }
 
@@ -87,23 +146,20 @@ body {
 }
 
 #btnGerar button:hover {
-    background-color: rgb(29, 29, 29);
+    background-color: #7747F0;
     color: white;
     cursor: pointer;
     border: 3px solid white;
+    transition: background 250ms;
 }
 
-.title button:hover, 
-#btnPopUp:hover {
-    background-color: rgb(29, 29, 29);
+#title button:hover {
+    background-color: #7747F0;
     color: white;
     cursor: pointer;
-    border: 2px solid white;
+    transition: background 250ms;
 }
 
-/*
-* FORMULARIO 2
-*/
 #div1 {
     background-color: white;
     border-radius: 20px;
@@ -125,34 +181,27 @@ body {
     font-size: 20px;
 }
 
-.title button {
+#title button {
     float: right;
     height: 40px;
     width: 40px;
     border-radius: 30px;
     border-style: none;
     cursor: pointer;
+    background-color: black;
+    color: white;
     border: 2px solid white;
 }
 
-.title button {
-    background-color: rgba(29, 29, 29, 0.26);
-    color: black;
-    border: 2px solid white;
-}
 
-.title button i,
+#title button i,
 #pop_up button i{
     position: relative;
     left: 1.5px;
 }
 
-/*
-* POP UP
-*/
-
 #container_popup {
-    color: rgb(209, 209, 209);
+    color: white;
     max-width: 250px;
     height: 215px;
     margin-top: 30px;
@@ -171,41 +220,71 @@ body {
     overflow-y: hidden;
 }
 
-#pop_up {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-bottom: 10px;
+#aside_1 {
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    left: 0;
+    top: 0;
 }
 
-#btnPopUp {
-    float: right;
-    height: 40px;
+#box4 {
+    position: fixed;
+    left: 0;
+}
+
+#box4_1,
+#box4_2 {
+    background-color: #7747F0;
+    margin: 5px;
     width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    font-size: 1em;
+    transition: width 250ms;
+}
+
+#btnPopUp,
+#btnLightMode {
+    width: 40px;
+    height: 40px;
     border-radius: 30px;
     border-style: none;
+    background-color: #7747F0;
+    color: white;
+    padding: 13.2px;
+}
+
+#box4_1_2 label,
+#box4_2_2 label {
+    width: 100%;
+    font-size: 16px;
+    color: white;
+}
+
+#box4_1_2,
+#box4_2_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box4_1:hover,
+#box4_1 button:hover,
+#btnPopUp:hover,
+#box4_1_2:hover, 
+#box4_1_2 label:hover,
+#box4_2:hover,
+#box4_2 button:hover,
+#box4_2_2 label:hover  {
     cursor: pointer;
-    border: 2px solid white;
+    color: white;
 }
 
-[data-tooltip] {
-    position: relative;
-}
-
-
-[data-tooltip]:after {
-    display: none;
-    position: absolute;
-    top: -30px;
-    left: -8px;
-    padding: 5px;
-    border-radius: 3px;
-    content: attr(data-tooltip);
-    white-space: nowrap;
-    background-color: white;
-    color: black;
-    border: 1px solid rgb(29, 29, 29);
-}
-  
-[data-tooltip]:hover:after {
-    display: block;
+#box4_2 button i {
+    position: static;
+    right: 2px;
 }
