@@ -20,8 +20,6 @@ body {
     flex-direction: column;
     overflow-x: hidden;
     overflow-y: hidden;
-    width: 800px;
-    height: 640px;
 }
 
 #box {
@@ -65,12 +63,6 @@ body {
     outline: 0;
     color: black;
     font-weight: 700;
-}
-
-.checkbox {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
 }
 
 .checkbox label:last-child {
@@ -242,7 +234,6 @@ body {
     height: 40px;
     border-radius: 50px;
     display: flex;
-    flex-direction: row;
     font-size: 1em;
     transition: width 250ms;
 }
@@ -287,4 +278,44 @@ body {
 #box4_2 button i {
     position: static;
     right: 2px;
+}
+
+/*/////////////////// MOBILE ///////////////////////*/
+/* iPhone em geral */
+@media (max-width: 550px) {
+    #form0 {
+        overflow: hidden; 
+        transition: height 400ms;
+        position: absolute;
+        top: 10%;
+        left: 23%;
+    }
+
+    #aside_1 {
+        height: 100%;
+        width: 50px;
+    }
+}
+
+/* Galaxy Fold */
+@media (max-width: 300px) {
+    #form0 {
+        overflow: hidden; 
+        transition: height 400ms;
+        position: absolute;
+        top: 10%;
+        left: 6%;
+    }
+
+    #aside_1 {
+        position: absolute;
+        height: 50px;
+        width: 100%;
+        top: 0;
+    }
+    
+    #pop_up {
+        display: flex;
+        flex-direction: row;
+    }
 }
